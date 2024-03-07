@@ -14,11 +14,15 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3,
+      "maxLength": 150
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "minLength": 3,
+      "maxLength": 250
     },
     "user": {
       "type": "relation",
