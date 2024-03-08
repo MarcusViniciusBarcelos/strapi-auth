@@ -33,10 +33,12 @@ module.exports = createCoreController('api::post.post', ({ strapi }) => ({
     // Adicionando o parâmetro populate para populacionar o usuário
     query.populate = 'user';
 
+    // verificando se o objeto filters existe
     if (!query.filters) {
       query.filters = {};
     }
 
+    // Adicionando o filtro do usuário logado
     if (ctx.state.user && ctx.state.user.id) {
       query.filters['user'] = ctx.state.user.id;
     }
